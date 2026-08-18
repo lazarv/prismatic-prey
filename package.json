@@ -1,0 +1,34 @@
+{
+  "name": "prismatic-prey",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Prismatic Prey — a monochrome arcade survival game for js13k 2026",
+  "main": "src/game.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:js13k": "vite build && node scripts/pack-js13k.mjs",
+    "build:js13k:release": "vite build && node scripts/pack-js13k.mjs --release",
+    "build:font": "node scripts/subset-font.mjs",
+    "build:sprites": "node scripts/build-sprite-atlas.mjs",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "UNLICENSED",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^11.19.0",
+      "onFail": "download"
+    }
+  },
+  "type": "module",
+  "dependencies": {
+    "vite": "^8.2.1"
+  },
+  "devDependencies": {
+    "roadroller": "^2.1.0",
+    "terser": "^5.50.0"
+  }
+}

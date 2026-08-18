@@ -1,0 +1,5 @@
+node_modules/
+dist/
+dist-js13k/
+.DS_Store
+*.zip

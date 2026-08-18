@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <meta name="theme-color" content="#050606" />
+    <title>Prismatic Prey</title>
+  </head>
+  <body>
+    <main id="viewport">
+      <section id="game" aria-label="Prismatic Prey game area">
+        <div id="stains" class="layer"></div>
+        <div id="flora" class="layer"></div>
+        <div id="world" class="layer"></div>
+        <div id="lighting" class="layer"></div>
+        <canvas id="fx" class="layer" width="320" height="200"></canvas>
+        <div id="foreground" class="layer"></div>
+        <div id="shade" class="layer"></div>
+
+        <header id="hud" class="layer" aria-live="polite">
+          <div id="vitals">
+            <div class="vital">
+              <span>HP</span><i class="meter"><b id="hp-fill"></b></i>
+            </div>
+            <div
+              id="stamina"
+              class="vital stamina-vital"
+              role="progressbar"
+              aria-label="Stamina"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-valuenow="100"
+            >
+              <span>ST</span><i class="meter"><b id="stamina-fill"></b></i>
+            </div>
+            <div
+              id="xp"
+              class="vital xp-vital"
+              role="progressbar"
+              aria-label="Experience"
+              aria-valuemin="0"
+              aria-valuemax="20"
+              aria-valuenow="0"
+            >
+              <span>XP</span><i class="meter"><b id="xp-fill"></b></i>
+            </div>
+            <div id="effects">
+              <span>FX</span>
+              <div id="powers" aria-label="Active flower powers"></div>
+            </div>
+          </div>
+          <div id="score-panel">
+            <span class="label">SCORE</span><b id="score">000000</b>
+          </div>
+          <div id="clock">00:00</div>
+        </header>
+
+        <div id="pointer-controls" class="layer" aria-hidden="true">
+          <button id="pointer-pause" type="button" aria-label="Open pause menu">
+            <i aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <div
+          id="death-screen"
+          class="layer hidden"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="death-title"
+          aria-hidden="true"
+        >
+          <div>
+            <h2 id="death-title">YOU DIED!</h2>
+            <p id="death-stats"></p>
+            <p id="death-input">ANY OTHER KEY TO TITLE</p>
+          </div>
+        </div>
+
+        <div
+          id="pause-screen"
+          class="layer hidden"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="pause-title"
+          aria-hidden="true"
+        >
+          <div>
+            <h2 id="pause-title">PAUSED</h2>
+            <div id="pause-actions">
+              <button id="pause-resume" type="button">RESUME</button>
+              <button id="pause-fullscreen" type="button">FULLSCREEN</button>
+              <button id="pause-new" type="button">NEW GAME</button>
+              <button id="pause-exit" type="button">EXIT TO TITLE</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="curtain" class="layer">
+          <h1 id="title-logo">PRISMATIC PREY</h1>
+          <div id="title-actions">
+            <button id="play" type="button">START GAME</button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/src/game.js"></script>
+  </body>
+</html>
